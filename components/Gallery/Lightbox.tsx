@@ -12,7 +12,6 @@ import { PALETTE } from '@/theme/theme';
 
 export interface LightboxImage {
   src: string;
-  alt: string;
 }
 
 interface LightboxProps {
@@ -25,22 +24,14 @@ interface LightboxProps {
 export default function Lightbox({ images, startIndex, open, onClose }: LightboxProps) {
   const [current, setCurrent] = useState(startIndex);
   const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
 
-  // Sync startIndex when lightbox opens
   useEffect(() => {
     if (open) setCurrent(startIndex);
   }, [open, startIndex]);
 
-  const prev = useCallback(() => {
-    setCurrent((c) => (c - 1 + images.length) % images.length);
-  }, [images.length]);
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + images.length) % images.length), [images.length]);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % images.length), [images.length]);
 
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % images.length);
-  }, [images.length]);
-
-  // Keyboard navigation
   useEffect(() => {
     if (!open) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -52,20 +43,13 @@ export default function Lightbox({ images, startIndex, open, onClose }: Lightbox
     return () => window.removeEventListener('keydown', handleKey);
   }, [open, prev, next, onClose]);
 
-  // Touch / swipe support
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
+  const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
   const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    const delta = (touchStartX.current ?? 0) - (touchEndX.current ?? 0);
-    if (Math.abs(delta) > 50) {
-      delta > 0 ? next() : prev();
-    }
+    const delta = (touchStartX.current ?? 0) - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 50) delta > 0 ? next() : prev();
   };
 
   if (!images.length) return null;
-
   const img = images[current];
 
   return (
@@ -75,144 +59,57 @@ export default function Lightbox({ images, startIndex, open, onClose }: Lightbox
       aria-label="Image lightbox"
       sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       slotProps={{
-        backdrop: {
-          sx: {
-            backgroundColor: 'rgba(10, 6, 3, 0.95)',
-            backdropFilter: 'blur(6px)',
-          },
-        },
+        backdrop: { sx: { backgroundColor: 'rgba(26,23,16,0.92)', backdropFilter: 'blur(4px)' } },
       }}
     >
       <Box
-        sx={{
-          position: 'relative',
-          outline: 'none',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
+        sx={{ position: 'relative', outline: 'none', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Close button */}
+        {/* Close */}
         <IconButton
           id="lightbox-close-btn"
-          aria-label="Close lightbox"
+          aria-label="Close"
           onClick={onClose}
-          sx={{
-            position: 'absolute',
-            top: { xs: 12, md: 24 },
-            right: { xs: 12, md: 24 },
-            color: PALETTE.cream,
-            backgroundColor: 'rgba(44,31,20,0.7)',
-            zIndex: 10,
-            '&:hover': { backgroundColor: 'rgba(201,168,76,0.3)' },
-          }}
+          sx={{ position: 'absolute', top: { xs: 12, md: 24 }, right: { xs: 12, md: 24 }, color: '#EAE4D9', zIndex: 10, '&:hover': { backgroundColor: 'rgba(234,228,217,0.15)' } }}
         >
           <CloseIcon />
         </IconButton>
 
-        {/* Image counter */}
-        <Typography
-          variant="caption"
-          sx={{
-            position: 'absolute',
-            top: { xs: 16, md: 28 },
-            left: '50%',
-            transform: 'translateX(-50%)',
-            color: PALETTE.warmGray,
-            letterSpacing: '0.15em',
-            fontSize: '0.75rem',
-            zIndex: 10,
-          }}
-        >
+        {/* Counter */}
+        <Typography variant="overline" sx={{ position: 'absolute', top: { xs: 18, md: 30 }, left: '50%', transform: 'translateX(-50%)', color: '#B0A898', letterSpacing: '0.2em', fontSize: '0.65rem', zIndex: 10 }}>
           {current + 1} / {images.length}
         </Typography>
 
-        {/* Prev arrow */}
-        <IconButton
-          id="lightbox-prev-btn"
-          aria-label="Previous image"
-          onClick={prev}
-          sx={{
-            position: 'absolute',
-            left: { xs: 8, md: 32 },
-            top: '50%',
-            transform: 'translateY(-50%)',
-            color: PALETTE.cream,
-            backgroundColor: 'rgba(44,31,20,0.7)',
-            zIndex: 10,
-            '&:hover': { backgroundColor: 'rgba(201,168,76,0.3)', transform: 'translateY(-50%) scale(1.1)' },
-            transition: 'all 0.2s ease',
-          }}
+        {/* Prev */}
+        <IconButton id="lightbox-prev-btn" aria-label="Previous" onClick={prev}
+          sx={{ position: 'absolute', left: { xs: 8, md: 32 }, top: '50%', transform: 'translateY(-50%)', color: '#EAE4D9', zIndex: 10, '&:hover': { backgroundColor: 'rgba(234,228,217,0.12)', transform: 'translateY(-50%) scale(1.1)' }, transition: 'all 0.2s' }}
         >
           <ArrowBackIosNewIcon />
         </IconButton>
 
-        {/* Main image */}
-        <Box
-          sx={{
-            maxWidth: '90vw',
-            maxHeight: '85vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
+        {/* Image */}
+        <Box sx={{ maxWidth: '90vw', maxHeight: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Box
             component="img"
-            key={img.src}
+            key={`${img.src}-${current}`}
             src={img.src}
-            alt={img.alt}
             sx={{
               maxWidth: '90vw',
               maxHeight: '82vh',
               objectFit: 'contain',
-              borderRadius: 1,
-              boxShadow: '0 20px 80px rgba(0,0,0,0.8)',
-              animation: 'fadeIn 0.25s ease',
-              '@keyframes fadeIn': {
-                from: { opacity: 0, transform: 'scale(0.97)' },
-                to: { opacity: 1, transform: 'scale(1)' },
-              },
+              display: 'block',
+              boxShadow: '0 24px 80px rgba(0,0,0,0.6)',
+              animation: 'fadeIn 0.2s ease',
+              '@keyframes fadeIn': { from: { opacity: 0, transform: 'scale(0.98)' }, to: { opacity: 1, transform: 'scale(1)' } },
             }}
           />
         </Box>
 
-        {/* Alt text caption */}
-        <Typography
-          variant="caption"
-          sx={{
-            mt: 2,
-            color: PALETTE.dustyGray,
-            letterSpacing: '0.08em',
-            fontSize: '0.7rem',
-            textAlign: 'center',
-            px: 2,
-          }}
-        >
-          {img.alt}
-        </Typography>
-
-        {/* Next arrow */}
-        <IconButton
-          id="lightbox-next-btn"
-          aria-label="Next image"
-          onClick={next}
-          sx={{
-            position: 'absolute',
-            right: { xs: 8, md: 32 },
-            top: '50%',
-            transform: 'translateY(-50%)',
-            color: PALETTE.cream,
-            backgroundColor: 'rgba(44,31,20,0.7)',
-            zIndex: 10,
-            '&:hover': { backgroundColor: 'rgba(201,168,76,0.3)', transform: 'translateY(-50%) scale(1.1)' },
-            transition: 'all 0.2s ease',
-          }}
+        {/* Next */}
+        <IconButton id="lightbox-next-btn" aria-label="Next" onClick={next}
+          sx={{ position: 'absolute', right: { xs: 8, md: 32 }, top: '50%', transform: 'translateY(-50%)', color: '#EAE4D9', zIndex: 10, '&:hover': { backgroundColor: 'rgba(234,228,217,0.12)', transform: 'translateY(-50%) scale(1.1)' }, transition: 'all 0.2s' }}
         >
           <ArrowForwardIosIcon />
         </IconButton>

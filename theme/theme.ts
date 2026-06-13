@@ -2,129 +2,140 @@
 
 import { createTheme } from '@mui/material/styles';
 
-// ─── Vintage Film Colour Palette ──────────────────────────────────────────────
+// ─── Drifter Floral–inspired Colour Palette ───────────────────────────────────
+// Light linen/parchment background, deep olive-brown text, minimal gold accents
 export const PALETTE = {
-  cream: '#F5EFE0',
-  beige: '#E8D9C0',
-  warmGray: '#C4B49A',
-  darkBrown: '#2C1F14',
-  mediumBrown: '#4A3728',
-  softGold: '#C9A84C',
-  fadedOrange: '#D4813A',
-  dustyGray: '#7A7065',
-  filmBlack: '#0F0A06',
+  // Backgrounds
+  parchment: 'rgba(234,228,217,0.97)',        // main page background — warm linen
+  parchmentDark: 'rgba(224,218,207,0.97)',    // slightly deeper for section alternation
+  // Text
+  inkBrown: '#2E2E2E',         // primary dark text
+  oliveBrown: '#4A4A4A',       // secondary text
+  mutedTaupe: '#8A8A8A',       // captions, labels
+  // Accents
+  warmBlack: '#1A1A1A',        // footer, strong contrast areas
+  ivoryWhite: '#FFFFFF',       // card backgrounds
+  gold: '#9C8553',             // subtle accent only
+  // Borders
+  linen: '#EBE6DF',            // dividers
 } as const;
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: PALETTE.softGold,
-      light: '#E2C270',
-      dark: '#A8882E',
-      contrastText: PALETTE.filmBlack,
+      main: PALETTE.inkBrown,
+      contrastText: PALETTE.parchment,
     },
     secondary: {
-      main: PALETTE.fadedOrange,
-      light: '#E89B5C',
-      dark: '#B0611C',
-      contrastText: PALETTE.cream,
+      main: PALETTE.gold,
+      contrastText: PALETTE.parchment,
     },
     background: {
-      default: PALETTE.filmBlack,
-      paper: PALETTE.darkBrown,
+      default: PALETTE.parchment,
+      paper: PALETTE.ivoryWhite,
     },
     text: {
-      primary: PALETTE.cream,
-      secondary: PALETTE.warmGray,
-      disabled: PALETTE.dustyGray,
+      primary: PALETTE.inkBrown,
+      secondary: PALETTE.oliveBrown,
+      disabled: PALETTE.mutedTaupe,
     },
-    divider: PALETTE.mediumBrown,
+    divider: PALETTE.linen,
   },
   typography: {
-    // Playfair Display for headings, Lato for body (loaded in layout.tsx via Google Fonts link)
-    fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
+    fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
     h1: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 700,
-      letterSpacing: '-0.02em',
-    },
-    h2: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 700,
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontWeight: 400,
       letterSpacing: '-0.01em',
     },
+    h2: {
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontWeight: 400,
+      letterSpacing: '0.02em',
+      textTransform: 'uppercase' as const,
+    },
     h3: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 600,
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontWeight: 400,
+      letterSpacing: '0.02em',
+      textTransform: 'uppercase' as const,
     },
     h4: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 600,
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontWeight: 400,
     },
     h5: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 500,
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontStyle: 'italic',
+      fontWeight: 400,
     },
     h6: {
-      fontFamily: '"Playfair Display", Georgia, serif',
-      fontWeight: 500,
+      fontFamily: '"Inter", sans-serif',
+      fontWeight: 400,
+      letterSpacing: '0.18em',
+      textTransform: 'uppercase' as const,
+      fontSize: '0.7rem',
     },
     body1: {
-      fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
-      lineHeight: 1.8,
-      letterSpacing: '0.01em',
+      fontFamily: '"Inter", sans-serif',
+      lineHeight: 1.85,
+      letterSpacing: '0.02em',
+      fontWeight: 300,
     },
     body2: {
-      fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
-      lineHeight: 1.7,
+      fontFamily: '"Inter", sans-serif',
+      lineHeight: 1.75,
+      fontWeight: 300,
     },
     button: {
-      fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
-      fontWeight: 700,
-      letterSpacing: '0.12em',
-      textTransform: 'uppercase',
+      fontFamily: '"Inter", sans-serif',
+      fontWeight: 400,
+      letterSpacing: '0.14em',
+      textTransform: 'uppercase' as const,
+      fontSize: '0.75rem',
     },
     overline: {
-      fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
+      fontFamily: '"Inter", sans-serif',
       letterSpacing: '0.2em',
-      fontWeight: 700,
+      fontWeight: 400,
+      fontSize: '0.65rem',
+      textTransform: 'uppercase' as const,
     },
     caption: {
-      fontFamily: '"Lato", "Helvetica Neue", Arial, sans-serif',
-      letterSpacing: '0.05em',
+      fontFamily: '"EB Garamond", Georgia, serif',
+      fontStyle: 'italic',
+      letterSpacing: '0.02em',
+      fontSize: '0.9rem',
     },
   },
-  shape: {
-    borderRadius: 2,
-  },
+  shape: { borderRadius: 0 },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 2,
-          padding: '12px 32px',
+          borderRadius: 0,
+          padding: '14px 36px',
           transition: 'all 0.3s ease',
+          letterSpacing: '0.14em',
         },
         contained: {
-          background: `linear-gradient(135deg, ${PALETTE.softGold} 0%, ${PALETTE.fadedOrange} 100%)`,
-          color: PALETTE.filmBlack,
-          boxShadow: `0 4px 20px rgba(201, 168, 76, 0.35)`,
+          backgroundColor: PALETTE.inkBrown,
+          color: PALETTE.parchment,
+          boxShadow: 'none',
           '&:hover': {
-            background: `linear-gradient(135deg, #E2C270 0%, #E89B5C 100%)`,
-            boxShadow: `0 6px 28px rgba(201, 168, 76, 0.5)`,
-            transform: 'translateY(-2px)',
+            backgroundColor: PALETTE.warmBlack,
+            boxShadow: 'none',
           },
         },
         outlined: {
-          borderColor: PALETTE.softGold,
-          color: PALETTE.softGold,
-          borderWidth: 1.5,
+          borderColor: PALETTE.inkBrown,
+          color: PALETTE.inkBrown,
+          borderWidth: 1,
           '&:hover': {
-            borderColor: PALETTE.cream,
-            color: PALETTE.cream,
-            backgroundColor: 'rgba(201, 168, 76, 0.08)',
-            transform: 'translateY(-2px)',
+            backgroundColor: PALETTE.inkBrown,
+            color: PALETTE.parchment,
+            borderColor: PALETTE.inkBrown,
           },
         },
       },
@@ -133,30 +144,26 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-root': {
-            borderRadius: 2,
-            backgroundColor: 'rgba(74, 55, 40, 0.4)',
-            '& fieldset': { borderColor: PALETTE.mediumBrown },
-            '&:hover fieldset': { borderColor: PALETTE.warmGray },
-            '&.Mui-focused fieldset': { borderColor: PALETTE.softGold },
+            borderRadius: 0,
+            backgroundColor: 'transparent',
+            '& fieldset': { borderColor: PALETTE.linen },
+            '&:hover fieldset': { borderColor: PALETTE.oliveBrown },
+            '&.Mui-focused fieldset': { borderColor: PALETTE.inkBrown },
           },
-          '& .MuiInputLabel-root': { color: PALETTE.warmGray },
-          '& .MuiInputLabel-root.Mui-focused': { color: PALETTE.softGold },
-          '& .MuiOutlinedInput-input': { color: PALETTE.cream },
+          '& .MuiInputLabel-root': { color: PALETTE.mutedTaupe },
+          '& .MuiInputLabel-root.Mui-focused': { color: PALETTE.inkBrown },
+          '& .MuiOutlinedInput-input': { color: PALETTE.inkBrown },
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
-        root: {
-          borderColor: PALETTE.mediumBrown,
-        },
+        root: { borderColor: PALETTE.linen },
       },
     },
     MuiAppBar: {
       styleOverrides: {
-        root: {
-          backgroundImage: 'none',
-        },
+        root: { backgroundImage: 'none', boxShadow: 'none' },
       },
     },
   },

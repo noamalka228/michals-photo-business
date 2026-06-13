@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
@@ -18,7 +19,7 @@ function GallerySectionDivider() {
       aria-hidden="true"
       sx={{
         height: 1,
-        background: `linear-gradient(90deg, transparent, ${PALETTE.mediumBrown}, transparent)`,
+        background: `linear-gradient(90deg, transparent, ${PALETTE.linen}, transparent)`,
       }}
     />
   );
@@ -26,7 +27,7 @@ function GallerySectionDivider() {
 
 export default function HomePage() {
   return (
-    <Box component="main" sx={{ backgroundColor: PALETTE.filmBlack }}>
+    <Box component="main" sx={{ backgroundColor: PALETTE.parchment }}>
       {/* Fixed navigation */}
       <Navbar />
 
@@ -36,15 +37,26 @@ export default function HomePage() {
       {/* 2. About — our story & philosophy */}
       <About />
 
-      {/* 3. Gallery sections — one per category in GALLERY_SECTIONS */}
-      {/*
-        HOW TO ADD A NEW GALLERY SECTION:
-        1. Add a new entry to /data/galleries.ts
-        2. Create the folder /public/assets/photos/<your-section-id>/
-        3. Drop your images in that folder and update the `images` array
-        That's it — the new section will automatically appear here.
-      */}
-      <Box id="gallery" component="section">
+      {/* 3. Portfolio sections */}
+      <Box id="portfolio" component="section">
+        {/* New Portfolio Title */}
+        <Box sx={{ pt: { xs: 12, md: 20 }, pb: { xs: 4, md: 6 }, textAlign: 'center' }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: '"EB Garamond", serif',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              color: PALETTE.inkBrown,
+              textTransform: 'none',
+              letterSpacing: '0.02em',
+            }}
+          >
+            A peek to the portfolio
+          </Typography>
+        </Box>
+
         {GALLERY_SECTIONS.map((section, idx) => (
           <React.Fragment key={section.id}>
             <Gallery section={section} />
