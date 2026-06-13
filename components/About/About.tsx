@@ -12,7 +12,7 @@ export default function About() {
       component="section"
       sx={{
         backgroundColor: PALETTE.parchment,
-        py: { xs: 12, md: 24 },
+        py: { xs: 12, md: 12 },
         px: { xs: 3, md: 8, lg: 12 },
       }}
     >
@@ -29,7 +29,7 @@ export default function About() {
         <Box sx={{ flex: 1, pt: { md: 15 }, w: '100%' }}>
           <Box
             component="img"
-            src="/assets/photos/portraits/photo-1.jpg"
+            src="/assets/owner/IMG_8274.jpg"
             alt="Michal Studio Approach"
             sx={{
               width: '100%',
@@ -53,8 +53,17 @@ export default function About() {
               letterSpacing: '-0.02em',
             }}
           >
-            a gentle <br/>
-            <Box component="span" sx={{ fontStyle: 'italic', fontWeight: 300, color: PALETTE.oliveBrown }}>approach</Box>
+            behind <br/>
+            <Box
+              component="span"
+              sx={{
+                fontStyle: 'italic',
+                fontWeight: 300,
+                color: PALETTE.oliveBrown
+              }}
+            >
+              the lens
+            </Box>
           </Typography>
           <Typography
             variant="body1"

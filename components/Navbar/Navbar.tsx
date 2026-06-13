@@ -18,7 +18,6 @@ import { PALETTE } from '@/theme/theme';
 const NAV_LINKS = [
   { label: 'About', href: '#about', },
   { label: 'Portfolio', href: '#portfolio', },
-  { label: 'Story', href: '#story', },
   { label: 'Contact', href: '#contact', },
 ];
 
@@ -123,7 +122,12 @@ export default function Navbar() {
         }}
       >
         <Box sx={{ p: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography sx={{ fontFamily: '"EB Garamond", serif', fontWeight: 400, fontSize: '1.2rem', letterSpacing: '0.02em', textTransform: 'lowercase', color: PALETTE.inkBrown }}>
+          <Typography sx={{
+            fontFamily: '"EB Garamond", serif',
+            fontWeight: 400, fontSize: '1.2rem', letterSpacing: '0.02em',
+            textTransform: 'lowercase',
+            color: PALETTE.inkBrown
+          }}>
             michal studio
           </Typography>
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: PALETTE.inkBrown }}>
@@ -138,7 +142,12 @@ export default function Navbar() {
                 onClick={() => scrollTo(link.href)}
                 sx={{ px: 3, py: 1.5, '&:hover': { backgroundColor: PALETTE.parchmentDark } }}
               >
-                <Typography sx={{ fontFamily: '"Inter", sans-serif', fontWeight: 400, fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: link.lowercase ? 'lowercase' : 'uppercase', color: PALETTE.inkBrown }}>
+                <Typography sx={{
+                  fontFamily: '"Inter", sans-serif',
+                  fontWeight: 400, fontSize: '0.65rem', letterSpacing: '0.15em',
+                  textTransform: 'capitalize',
+                  color: PALETTE.inkBrown
+                }}>
                   {link.label}
                 </Typography>
               </ListItemButton>

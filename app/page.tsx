@@ -40,15 +40,37 @@ export default function HomePage() {
       {/* 3. Portfolio sections */}
       <Box id="portfolio" component="section">
         {/* New Portfolio Title */}
-        <Box sx={{ pt: { xs: 12, md: 20 }, pb: { xs: 4, md: 6 }, textAlign: 'center' }}>
+        <Box
+          sx={{
+            position: 'relative',
+            pt: { xs: 20, md: 32 },
+            pb: { xs: 20, md: 32 },
+            textAlign: 'center',
+            backgroundImage: 'url("/assets/photos/atmosphere/DSCF0135.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(26,23,16,0.3)',
+              zIndex: 0,
+            }
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
+              position: 'relative',
+              zIndex: 1,
               fontFamily: '"EB Garamond", serif',
               fontStyle: 'italic',
               fontWeight: 400,
               fontSize: { xs: '2.5rem', md: '3.5rem' },
-              color: PALETTE.inkBrown,
+              color: '#EAE4D9',
               textTransform: 'none',
               letterSpacing: '0.02em',
             }}

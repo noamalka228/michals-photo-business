@@ -1,9 +1,7 @@
 'use client';
 
-import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { PALETTE } from '@/theme/theme';
 
 export default function Hero() {
@@ -39,24 +37,36 @@ export default function Hero() {
         }}
       >
         {/* Left side text */}
-        <Box sx={{ flex: 1, position: 'relative', zIndex: 2, order: { xs: 2, md: 1 } }}>
+        <Box sx={{ flex: 1.3, position: 'relative', zIndex: 2, order: { xs: 2, md: 1 } }}>
           <Typography
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '3.5rem', sm: '5rem', md: '7rem', lg: '8.5rem' },
+              fontSize: { xs: '3.5rem', sm: '5rem', md: '5rem', lg: '6rem' },
               color: PALETTE.inkBrown,
               lineHeight: 0.9,
               mb: 6,
               letterSpacing: '-0.02em',
+              position: 'relative',
+              zIndex: 1,
+              fontFamily: '"EB Garamond", serif',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              textTransform: 'none',
             }}
           >
-            michal studio<br />
-            <Box component="span" sx={{ fontStyle: 'italic', fontWeight: 300, color: PALETTE.oliveBrown }}>
-              photography
+            Your love. Your legacy.<br />
+            <Box
+              component="span"
+              sx={{
+                fontStyle: 'italic',
+                fontWeight: 300,
+                color: PALETTE.oliveBrown,
+              }}>
+              Told through the lens.
             </Box>
           </Typography>
-          
+
           <Typography
             variant="body1"
             sx={{
@@ -117,7 +127,7 @@ export default function Hero() {
         </Box>
 
         {/* Right side image */}
-        <Box sx={{ flex: 1.1, width: '100%', order: { xs: 1, md: 2 } }}>
+        <Box sx={{ flex: 0.7, width: '100%', order: { xs: 1, md: 2 } }}>
           <Box
             component="img"
             src="/assets/background/hero-bg.jpg"

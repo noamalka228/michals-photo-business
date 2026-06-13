@@ -31,14 +31,14 @@ export default function Footer() {
             michal studio
           </Typography>
           <Typography variant="body2" sx={{ color: PALETTE.oliveBrown, lineHeight: 1.8 }}>
-            An independent photography studio creating artful, film-inspired images for portraits, events, and intimate moments.
+            An independent photographer creating artful, film-inspired images for portraits, events, and intimate moments.
           </Typography>
         </Box>
 
         {/* Right side: Links and Back to top */}
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-end' }, gap: 4 }}>
           <Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'center' }}>
-            {['about', 'portfolio', 'story', 'contact'].map((href) => (
+            {['About', 'Portfolio', 'Contact'].map((href) => (
               <Typography
                 key={href}
                 component="a"

@@ -7,7 +7,7 @@ import { PALETTE } from '@/theme/theme';
 
 export default function Story() {
   return (
-    <Box id="story" component="section" sx={{ backgroundColor: PALETTE.parchment, py: { xs: 15, md: 25 }, px: { xs: 3, md: 8 } }}>
+    <Box id="story" component="section" sx={{ backgroundColor: PALETTE.parchment, py: { xs: 15, md: 12 }, px: { xs: 3, md: 8 } }}>
       <Box sx={{ maxWidth: 900, mx: 'auto', textAlign: 'center' }}>
         <Typography
           variant="h2"
@@ -24,7 +24,7 @@ export default function Story() {
             letterSpacing: '0.01em',
           }}
         >
-          &ldquo;Inspired by analog film, quiet city corners, golden-hour light, and real human connection.&rdquo;
+          Telling your story.
         </Typography>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
