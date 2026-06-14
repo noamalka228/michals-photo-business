@@ -50,7 +50,7 @@ export default function About() {
             sx={{
               fontSize: { xs: '2.5rem', sm: '4rem', md: '5.5rem' },
               fontStyle: 'italic',
-              fontFamily: 'Segoe UI',
+              fontFamily: '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
               color: PALETTE.inkBrown,
               mb: 6,
               lineHeight: 1,
