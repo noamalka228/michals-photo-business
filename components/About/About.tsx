@@ -12,7 +12,7 @@ export default function About() {
       component="section"
       sx={{
         backgroundColor: PALETTE.parchment,
-        py: { md: 12 },
+        py: { xs: 3, md: 12 },
         px: { xs: 3, md: 8, lg: 12 },
       }}
     >
