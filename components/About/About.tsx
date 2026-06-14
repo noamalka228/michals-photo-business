@@ -45,21 +45,24 @@ export default function About() {
         </Box>
         <Box sx={{ flex: 1.2, pt: { xs: 0, md: 5 } }}>
           <Typography
-            variant="h2"
-            component="h2"
+            variant="h1"
+            component="h1"
             sx={{
               fontSize: { xs: '2.5rem', sm: '4rem', md: '5.5rem' },
+              fontStyle: 'italic',
+              fontFamily: '-apple-system',
               color: PALETTE.inkBrown,
               mb: 6,
               lineHeight: 1,
               letterSpacing: '-0.02em',
             }}
           >
-            behind <br />
+            Behind <br />
             <Box
               component="span"
               sx={{
                 fontStyle: 'italic',
+                fontFamily: '-apple-system',
                 fontWeight: 300,
                 color: PALETTE.oliveBrown
               }}
