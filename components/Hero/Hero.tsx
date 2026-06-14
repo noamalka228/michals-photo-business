@@ -154,7 +154,7 @@ export default function Hero() {
             mb: 5,
             mt: { xs: 0, md: '-8rem' },
             letterSpacing: '-0.02em',
-            fontFamily: '-apple-system',
+            fontFamily: 'Segoe UI',
             fontStyle: 'italic',
             fontWeight: 400,
             textTransform: 'none',

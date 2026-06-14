@@ -50,7 +50,7 @@ export default function About() {
             sx={{
               fontSize: { xs: '2.5rem', sm: '4rem', md: '5.5rem' },
               fontStyle: 'italic',
-              fontFamily: '-apple-system',
+              fontFamily: 'Segoe UI',
               color: PALETTE.inkBrown,
               mb: 6,
               lineHeight: 1,
@@ -61,8 +61,6 @@ export default function About() {
             <Box
               component="span"
               sx={{
-                fontStyle: 'italic',
-                fontFamily: '-apple-system',
                 fontWeight: 300,
                 color: PALETTE.oliveBrown
               }}

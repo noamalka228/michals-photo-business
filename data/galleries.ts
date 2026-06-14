@@ -28,7 +28,7 @@ export const GALLERY_SECTIONS: GallerySection[] = [
       { filename: 'image4.jpeg' },
       { filename: 'DSCF1219.jpg' },
       { filename: 'DSCF1227.jpg' },
-      { filename: 'DSC03033.jpg' },
+      { filename: 'DSC03033.JPG' },
       { filename: 'DSCF1258.jpg' },
       { filename: 'DSCF1264.jpg' },
       { filename: 'DSCF1370.jpg' },
