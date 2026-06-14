@@ -61,7 +61,7 @@ export default function Navbar() {
                 color: PALETTE.inkBrown,
               }}
             >
-              michal studio
+              Kanta Photography
             </Typography>
           </Box>
 
