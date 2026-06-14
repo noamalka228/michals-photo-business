@@ -37,14 +37,20 @@ export default function Hero() {
         }}
       >
         {/* Left side text */}
-        <Box sx={{ flex: 1.3, position: 'relative', zIndex: 2, order: { xs: 2, md: 1 } }}>
+        <Box sx={{
+          flex: 1.3,
+          position: 'relative',
+          zIndex: 2,
+          order: { xs: 2, md: 1 },
+          p:2,
+          }}>
           <Typography
             variant="h1"
             component="h1"
             sx={{
               fontSize: { xs: '3.5rem', sm: '5rem', md: '5rem', lg: '6rem' },
               color: PALETTE.inkBrown,
-              lineHeight: 0.9,
+              lineHeight: 1.1,
               mb: 6,
               letterSpacing: '-0.02em',
               position: 'relative',
