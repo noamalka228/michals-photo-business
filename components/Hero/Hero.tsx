@@ -19,7 +19,7 @@ const HERO_PHOTOS = [
     mobile: { show: true },
   },
   {
-    src: '/assets/photos/atmosphere/IMG_8301.jpg',
+    src: '/assets/photos/atmosphere/IMG_8301.JPG',
     // Large portrait – CENTRE
     desktop: {
       width: '20vw',
@@ -154,7 +154,7 @@ export default function Hero() {
             mb: 5,
             mt: { xs: 0, md: '-8rem' },
             letterSpacing: '-0.02em',
-            fontFamily: '"EB Garamond", serif',
+            fontFamily: 'Segoe UI Symbol',
             fontStyle: 'italic',
             fontWeight: 400,
             textTransform: 'none',
