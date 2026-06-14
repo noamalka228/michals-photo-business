@@ -151,7 +151,7 @@ export default function Hero() {
             fontSize: { xs: '2.5rem', sm: '4rem', md: '5rem', lg: '6rem' },
             color: PALETTE.inkBrown,
             lineHeight: 1.1,
-            mb: 7,
+            mb: 5,
             mt: { xs: 0, md: '-8rem' },
             letterSpacing: '-0.02em',
             fontFamily: '"EB Garamond", serif',
@@ -180,7 +180,7 @@ export default function Hero() {
             flexDirection: { xs: 'column', sm: 'row' },
             alignItems: 'center',
             justifyContent: 'center',
-            gap: { xs: 7, sm: 10 },
+            gap: { xs: 4, sm: 10 },
           }}
         >
           <Typography
