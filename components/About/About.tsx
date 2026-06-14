@@ -12,7 +12,7 @@ export default function About() {
       component="section"
       sx={{
         backgroundColor: PALETTE.parchment,
-        py: { xs: 12, md: 12 },
+        py: { md: 12 },
         px: { xs: 3, md: 8, lg: 12 },
       }}
     >
@@ -77,18 +77,7 @@ export default function About() {
               lineHeight: 1.8,
             }}
           >
-            We believe that the most beautiful moments are the honest ones. There is no manufacturing of emotion here—only the quiet observation of light, connection, and the poetry of the everyday.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: PALETTE.oliveBrown,
-              maxWidth: 480,
-              fontSize: '1.15rem',
-              lineHeight: 1.8,
-            }}
-          >
-            Every frame is captured with a deep appreciation for the unhurried analog process. We celebrate grain, softness, and the imperfect warmth that only true film aesthetics can provide.
+            My name is Michal, and I am a photographer who believes that every image should tell a story. Through my photography, I strive to capture not only what is visible, but also the history, emotions, and unique atmosphere of each place and moment. My goal is to create authentic images that preserve the natural character of a scene and allow viewers to connect with its story on a deeper level.
           </Typography>
         </Box>
       </Box>

@@ -38,9 +38,10 @@ export default function HomePage() {
       <About />
 
       {/* 3. Portfolio sections */}
-      <Box id="portfolio" component="section">
+      <Box component="section" sx={{ py: 20 }}>
         {/* New Portfolio Title */}
         <Box
+          id="portfolio"
           sx={{
             position: 'relative',
             pt: { xs: 20, md: 32 },
