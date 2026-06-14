@@ -56,7 +56,7 @@ const HERO_PHOTOS = [
     mobile: { show: false },
   },
   {
-    src: '/assets/photos/outdoor/IMG_8275.jpg',
+    src: '/assets/photos/outdoor/IMG_8275.JPG',
     // Smaller – overlaps centre & right gap, top area
     desktop: {
       width: '18vw',
