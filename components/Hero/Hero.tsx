@@ -140,7 +140,7 @@ export default function Hero() {
             alt="Michal Studio Editorial"
             sx={{
               width: '100%',
-              height: { xs: '65vh', md: '85vh' },
+              height: { xs: '50vh', md: '85vh' },
               objectFit: 'cover',
               display: 'block',
             }}
