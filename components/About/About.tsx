@@ -26,17 +26,19 @@ export default function About() {
           alignItems: 'flex-start',
         }}
       >
-        <Box sx={{ flex: 1, pt: { md: 15 }, w: '100%' }}>
+        <Box sx={{ flex: 1, height: { xs: '100%', md: '100%' } }}>
           <Box
             component="img"
-            src="/assets/owner/IMG_8274.jpg"
+            src="/assets/owner/colored.png"
             alt="Michal Studio Approach"
             sx={{
               width: '100%',
-              maxWidth: { xs: '100%', md: 540 },
+              maxWidth: { xs: '65%', md: 380 },
               height: 'auto',
               display: 'block',
-              ml: 'auto',
+              mx: { xs: 'auto', md:'none' },
+              ml: { md: 22 },
+              // ml: 'auto',
               objectFit: 'cover',
             }}
           />
@@ -46,14 +48,14 @@ export default function About() {
             variant="h2"
             component="h2"
             sx={{
-              fontSize: { xs: '3rem', sm: '4rem', md: '5.5rem' },
+              fontSize: { xs: '2.5rem', sm: '4rem', md: '5.5rem' },
               color: PALETTE.inkBrown,
               mb: 6,
               lineHeight: 1,
               letterSpacing: '-0.02em',
             }}
           >
-            behind <br/>
+            behind <br />
             <Box
               component="span"
               sx={{

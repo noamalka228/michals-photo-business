@@ -48,7 +48,7 @@ export default function Hero() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '3.5rem', sm: '5rem', md: '5rem', lg: '6rem' },
+              fontSize: { xs: '2.5rem', sm: '5rem', md: '5rem', lg: '6rem' },
               color: PALETTE.inkBrown,
               lineHeight: 1.1,
               mb: 6,
