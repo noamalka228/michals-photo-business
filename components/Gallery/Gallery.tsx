@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Lightbox, { LightboxImage } from './Lightbox';
+import InfiniteCarousel from './InfiniteCarousel';
 import type { GallerySection } from '@/data/galleries';
 import { PALETTE } from '@/theme/theme';
 
@@ -18,6 +19,8 @@ export default function Gallery({ section }: GalleryProps) {
   const images: LightboxImage[] = section.images.map((img) => ({
     src: `${section.folder}/${img.filename}`,
   }));
+
+  const baseImages = images.slice(0, 6);
 
   const openLightbox = (idx: number) => {
     setLightboxIndex(idx);
@@ -61,21 +64,24 @@ export default function Gallery({ section }: GalleryProps) {
             </Typography>
           </Box>
 
-          {/* Clean Grid / Mobile Carousel */}
+          {/* Mobile Carousel */}
+          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+            <InfiniteCarousel
+              images={images}
+              onImageClick={openLightbox}
+            />
+          </Box>
+
+          {/* Desktop Grid */}
           <Box
             sx={{
-              display: { xs: 'flex', md: 'grid' },
-              gridTemplateColumns: { md: 'repeat(3, 1fr)' },
-              gap: { xs: 2, md: 8 },
+              display: { xs: 'none', md: 'grid' },
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 8,
               alignItems: 'center',
-              overflowX: { xs: 'auto', md: 'visible' },
-              scrollSnapType: { xs: 'x mandatory', md: 'none' },
-              scrollbarWidth: 'none',
-              '&::-webkit-scrollbar': { display: 'none' },
-              px: { xs: '15vw', md: 0 },
             }}
           >
-            {images.slice(0, 6).map((img, idx) => (
+            {baseImages.map((img, idx) => (
               <Box
                 key={idx}
                 role="button"
@@ -87,8 +93,6 @@ export default function Gallery({ section }: GalleryProps) {
                   overflow: 'hidden',
                   aspectRatio: idx % 2 === 0 ? '3/4' : '4/5',
                   backgroundColor: PALETTE.parchmentDark,
-                  flex: { xs: '0 0 70vw', md: 'unset' },
-                  scrollSnapAlign: { xs: 'center', md: 'none' },
                   '& img': {
                     transition: 'transform 0.6s ease',
                   },
@@ -123,3 +127,4 @@ export default function Gallery({ section }: GalleryProps) {
     </>
   );
 }
+
