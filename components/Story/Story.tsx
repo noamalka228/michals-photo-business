@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { PALETTE } from '@/theme/theme';
@@ -29,12 +29,13 @@ export default function Story() {
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
           <Box sx={{ width: 1, height: 80, backgroundColor: PALETTE.inkBrown, mb: 4 }} />
-          <Typography
-            variant="overline"
-            sx={{ color: PALETTE.inkBrown, letterSpacing: '0.2em', textTransform: 'lowercase' }}
-          >
-            michal studio
-          </Typography>
+          <Image
+            src="/assets/logo/app-logo-no-bg.png"
+            alt="Kanta Photography logo"
+            width={140}
+            height={48}
+            style={{ objectFit: 'contain', height: '48px', width: 'auto' }}
+          />
         </Box>
       </Box>
     </Box>

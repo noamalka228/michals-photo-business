@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { PALETTE } from '@/theme/theme';
 
-const OWNER_EMAIL = 'mihaliki21@gmail.com';
+const OWNER_EMAIL = process.env.NEXT_PUBLIC_OWNER_EMAIL;
 
 export default function Contact() {
   const mailToLink = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("Photography Inquiry")}&body=${encodeURIComponent("Hello Michal,\n\nI would love to chat about a potential project.\n\nMy name is: \nProject details: \n")}`;

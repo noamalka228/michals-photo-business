@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -51,18 +52,14 @@ export default function Navbar() {
             onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}
             sx={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <Typography
-              sx={{
-                fontFamily: '"EB Garamond", Georgia, serif',
-                fontWeight: 400,
-                fontSize: { xs: '1.2rem', md: '1.4rem' },
-                letterSpacing: '0.02em',
-                textTransform: 'lowercase',
-                color: PALETTE.inkBrown,
-              }}
-            >
-              michal studio
-            </Typography>
+            <Image
+              src="/assets/logo/app-logo-no-bg.png"
+              alt="Kanta Photography logo"
+              width={120}
+              height={40}
+              style={{ objectFit: 'contain', height: '40px', width: 'auto' }}
+              priority
+            />
           </Box>
 
           {/* Desktop nav */}
@@ -122,14 +119,13 @@ export default function Navbar() {
         }}
       >
         <Box sx={{ p: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography sx={{
-            fontFamily: '"EB Garamond", serif',
-            fontWeight: 400, fontSize: '1.2rem', letterSpacing: '0.02em',
-            textTransform: 'lowercase',
-            color: PALETTE.inkBrown
-          }}>
-            michal studio
-          </Typography>
+          <Image
+            src="/assets/logo/app-logo-no-bg.png"
+            alt="Kanta Photography logo"
+            width={100}
+            height={34}
+            style={{ objectFit: 'contain', height: '34px', width: 'auto' }}
+          />
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: PALETTE.inkBrown }}>
             <CloseIcon fontSize="small" />
           </IconButton>

@@ -3,7 +3,7 @@ import ThemeRegistry from '@/theme/ThemeRegistry';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Michal Studio — Vintage Film Photography',
+  title: 'Kanta Photography - Vintage captured moments',
   description:
     'Original photography by Michal. Vintage-inspired photography with the clarity, depth, and detail of a high-end camera. Portraits, street, events, editorial, and travel.',
   keywords: [
@@ -13,10 +13,15 @@ export const metadata: Metadata = {
     'portrait photographer',
     'street photography',
     'event photographer',
-    'Michal Studio',
+    'Kanta Photography',
   ],
+  icons: {
+    icon: '/assets/logo/camera-logo.jpeg',
+    shortcut: '/assets/logo/camera-logo.jpeg',
+    apple: '/assets/logo/camera-logo.jpeg',
+  },
   openGraph: {
-    title: 'Michal Studio — Vintage Film Photography',
+    title: 'Kanta Photography — Vintage captured moments',
     description:
       'Timeless moments, captured on film. Warm, imperfect, emotional, and timeless photography.',
     type: 'website',

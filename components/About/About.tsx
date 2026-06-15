@@ -30,13 +30,13 @@ export default function About() {
           <Box
             component="img"
             src="/assets/owner/colored.png"
-            alt="Michal Studio Approach"
+            alt="Kanta Photography Approach"
             sx={{
               width: '100%',
               maxWidth: { xs: '65%', md: 380 },
               height: 'auto',
               display: 'block',
-              mx: { xs: 'auto', md:'none' },
+              mx: { xs: 'auto', md: 'none' },
               ml: { md: 22 },
               // ml: 'auto',
               objectFit: 'cover',

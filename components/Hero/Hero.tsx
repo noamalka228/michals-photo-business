@@ -192,7 +192,7 @@ export default function Hero() {
               lineHeight: 1.8,
             }}
           >
-            An editorial approach to photography. We capture the quiet moments,
+            An editorial approach to photography. I capture the quiet moments,
             the natural light, and the timeless feeling of film. Unhurried,
             intentional, and deeply organic.
           </Typography>

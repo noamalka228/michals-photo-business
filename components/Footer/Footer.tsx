@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { PALETTE } from '@/theme/theme';
@@ -21,15 +22,16 @@ export default function Footer() {
       }}
     >
       <Box sx={{ maxWidth: 1400, mx: 'auto', display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'center', md: 'flex-start' }, gap: 6 }}>
-        
+
         {/* Left side: Bio */}
         <Box sx={{ maxWidth: 360, textAlign: { xs: 'center', md: 'left' } }}>
-          <Typography
-            variant="h4"
-            sx={{ fontFamily: '"EB Garamond", serif', color: PALETTE.inkBrown, mb: 3, letterSpacing: '0.02em', textTransform: 'lowercase' }}
-          >
-            michal studio
-          </Typography>
+          <Image
+            src="/assets/logo/app-logo-no-bg.png"
+            alt="Kanta Photography logo"
+            width={140}
+            height={48}
+            style={{ objectFit: 'contain', height: '48px', width: 'auto', marginBottom: '12px' }}
+          />
           <Typography variant="body2" sx={{ color: PALETTE.oliveBrown, lineHeight: 1.8 }}>
             An independent photographer creating artful, film-inspired images for portraits, events, and intimate moments.
           </Typography>
@@ -37,26 +39,6 @@ export default function Footer() {
 
         {/* Right side: Links and Back to top */}
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-end' }, gap: 4 }}>
-          <Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'center' }}>
-            {['About', 'Portfolio', 'Contact'].map((href) => (
-              <Typography
-                key={href}
-                component="a"
-                href={`#${href}`}
-                variant="button"
-                sx={{
-                  color: PALETTE.inkBrown,
-                  textDecoration: 'none',
-                  textTransform: 'lowercase',
-                  letterSpacing: '0.15em',
-                  fontSize: '0.7rem',
-                  '&:hover': { opacity: 0.6 },
-                }}
-              >
-                {href}
-              </Typography>
-            ))}
-          </Box>
           <Box
             component="button"
             onClick={scrollToTop}
